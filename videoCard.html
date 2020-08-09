@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+</head>
+
+<body class="h-full bg-white flex items-center">
+    <div class="relative h-64 max-w-sm bg-white mx-auto
+    shadow hover:shadow-lg">
+        <img class="object-cover h-full w-full" src="./image/videoCard.jpg" alt="">
+        <div>
+            <a class="absolute right-0 top-0 p-3 bg-gray-900 text-white rounded-full m-6 opacity-50 hover:opacity-100">
+                <svg style="width: 24px; height:24px" viewBox='0 0 24 24'>
+                    <path fill='currentColor' d="M8,5.14V19.14L19,12.14L8,5.14Z" />
+                </svg>
+            </a>
+        </div>
+        <div class="absolute bottom-0 text-white p-4">
+            <h4 class="text-xl" onclick="{()=>{console.log('听，海哭的声音');}}">A whale of a hug</h4>
+            <div class="border-2 border-blue-700 w-1/5 rounded-lg my-3"></div>
+            <div class="text-xs text-gray-400">Young humpback whale giving its mother a hug off the coast of Tonga</div>
+        </div>
+    </div>
+</body>
+
+</html>
