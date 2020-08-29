@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>待办页面</title>
+    <link rel="stylesheet" href="../style/tailwind.css">
+</head>
+<style>
+    .arrow {
+        width: 10px;
+        height: 10px;
+        border-top: 1px solid #111111;
+        border-right: 1px solid #111111;
+        position: absolute;
+        right: 25px;
+        top: 25px;
+        opacity: .5;
+        transform: rotate(45deg);
+
+    }
+</style>
+
+<body class="w-full">
+    <div class="flex h-10 border-solid border-gray-300">
+        <div id="todo"
+            class=" w-full text-center pt-2  text-blue-700 font-bold   border-b-2 border-blue-700">
+            待办事项</div>
+        <div id="email"
+            class=" w-full text-center pt-2 hover:text-blue-700 hover:font-bold  border-b-2 hover:border-blue-700">电子邮件
+        </div>
+    </div>
+    <div id="todoVisible" class=""></div>
+    <div id="emailVisible" class="hidden"></div>
+
+
+    <script>
+        const todo = document.getElementById('todo')
+        const email = document.getElementById('email')
+        const todoVisible = document.getElementById('todoVisible')
+        const emailVisible = document.getElementById('emailVisible')
+        //待办事项的数据
+        const todoData = [
+            {
+                title: 'todo正式发文：关于啥啥啥待引发《》',
+                time: '2020-08-11 10:26:12'
+            },
+            {
+                title: '正式发文：关于啥啥啥待引发《》正式发文：关于啥啥啥待引发《》正式发文：关于啥啥啥待引发《》',
+                time: '2020-08-12 10:26:13'
+            },
+            {
+                title: '正式发文：关于啥啥啥待引发《》',
+                time: '2020-08-13 10:26:14'
+            },
+            {
+                title: '正式发文：关于印发《Todo》',
+                time: '2020-08-13 10:26:14'
+            },
+            
+
+        ]
+
+        // 电子邮件的数据
+        const emailData = [
+            {
+                title: 'email主板投资银行业务心调事业部投资经理',
+                time: '2020-08-11 10:26:11'
+            },
+            {
+                title: '主板投资银行业务心调事业部投资经理',
+                time: '2020-08-11 10:26:11'
+            },
+            {
+                title: '主板投资银行业务心调事业部投资经理',
+                time: '2020-08-11 10:26:11'
+            },
+        ]
+
+        // 创建Ul，展示列表
+        function createUl(data, dataVisible) {
+            for (let i = 0; i < data.length; i++) {
+                let myUl = document.createElement('ul')
+                let myLiTitle = document.createElement('li')
+                let MyLiTime = document.createElement('li')
+                myUl.innerHTML = `<div class='arrow'></div>`
+                myLiTitle.innerHTML = data[i].title
+                MyLiTime.innerHTML = data[i].time
+                myUl.className = 'w-full border-solid border-b-2 border-gray-300 p-3 relative '
+                myLiTitle.className = 'text-sm mb-1 truncate w-10/12'
+                MyLiTime.className = 'text-xs text-gray-500'
+                dataVisible.appendChild(myUl)
+                myUl.appendChild(myLiTitle)
+                myUl.appendChild(MyLiTime)
+            }
+        }
+
+        createUl(todoData, todoVisible)
+        createUl(emailData, emailVisible)
+
+        // 点击切换
+        todo.onclick = () => {
+            todo.className='w-full text-center pt-2   text-blue-700 font-bold   border-b-2 border-blue-700'
+            emailVisible.style.display = "none"
+            todoVisible.style.display = "block"
+        }
+        email.onclick = () => {
+            todo.className=' w-full text-center pt-2 border-b-2 '
+            todoVisible.style.display = "none"
+            emailVisible.style.display = "block"
+        }
+    </script>
+</body>
+
+</html>
