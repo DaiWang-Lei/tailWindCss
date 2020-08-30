@@ -1,12 +1,43 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="h-full">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>微博</title>
     <link rel="stylesheet" href="../style/tailwind.css">
 </head>
-<body>
-    <div>test</div>
+
+<body class="h-full bg-gray-300 flex justify-center items-center">
+    <div class="w-64 rounded overflow-hidden shadow-lg">
+        <div class="h-24">
+            <img src="../image/weibo.jfif" alt="" class="object-cover w-full">
+        </div>
+        <div class="bg-white text-center">
+            <div class="flex justify-center -mt-12">
+                <div class="w-20 h-20 relative">
+                        <img src="../image/weiboHead.jpg" alt="" class="rounded-full border-4">
+                        <div class="border-2 absolute right-0 bottom-0 bg-orange-400 text-white h-6 w-6 rounded-full">v</div>
+                </div>
+            </div>
+            <div class="text-gray-800 font-bold">代罔</div>
+            <div class="flex py-3 cursor-pointer ">
+                <div class="w-1/3 hover:text-orange-500 ">
+                    <div class="text-gray-800 font-bold text-xl hover:text-orange-500">666</div>
+                    <div>关注</div>
+                </div>
+                <div class="w-1/3 border-l border-r hover:text-orange-500">
+                    <div class="text-gray-800 font-bold text-xl hover:text-orange-500">999</div>
+                    <div>粉丝</div>
+
+                </div>
+                <div class="w-1/3 hover:text-orange-500">
+                    <div class="text-gray-800 font-bold text-xl hover:text-orange-500">333</div>
+                    <div>微博</div>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
+
 </html>
