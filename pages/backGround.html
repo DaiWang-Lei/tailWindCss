@@ -6,17 +6,50 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rubuta管理平台</title>
     <link rel="stylesheet" href="../style/tailwind.css">
+    <style>
+        nav a {
+            display: flex;
+            height: 100%;
+            align-items: center;
+            padding:0 15px;
+        }
+        nav a:hover{
+            color:#fff;
+            cursor: pointer;
+        }
+        nav li>ul {
+            background-color: #2d3748;
+            position: absolute;
+            overflow: hidden;
+            min-width: 160px;
+            opacity: 0;
+            visibility: hidden;
+            transition: ease all 0.3s;
+        }
+
+        nav li>ul a {
+            line-height: 40px;
+        }
+        nav li:hover >ul{
+            visibility: visible;
+            opacity: 1;
+        }
+    </style>
 </head>
 
-<body class='h-full text-gray-600 flex flex-col bg-gray-300'>
-    <div class="shadow w-full bg-white h-12 flex  items-center justify-between">
-        <h1 class="text-xl text-gray-800 px-4">Robuta 管理中心</h1>
+<body class='h-full text-sm text-gray-600 flex flex-col bg-gray-300'>
+    <nav class="shadow  flex  items-center justify-between bg-gray-800 text-gray-500 px-4 h-12">
+        <div class="flex items-center h-full">
+            <div>Robuta Center</div>
+            <ul id='menu' class="ml-4 h-full flex items-stretch"></ul>
+        </div>
         <div class="flex items-center px-4">
             <div class="text-base">超级管理员</div>
             <div class=" ml-2">
                 <img class="rounded-full border w-8 " src="../images/weiboHead.jpg" alt="">
             </div>
         </div>
+    </nav>
     </div>
     <div class="flex  flex-1">
         <div class="bg-gray-800 w-64 p-6">
@@ -114,7 +147,77 @@
 
         </div>
     </div>
+    <script>
+        const menu = document.getElementById('menu')
+        const content = [
+            {
+                aTitle: '产品',
+                detail: {
+                    tilte1: '对象存储',
+                    tilte2: '私有云存储',
+                    tilte3: '融合 CDN',
+                    tilte4: '内容安全',
+                    tilte5: '边缘计算平台'
+                }
+            }, {
+                aTitle: '解决方案',
+                detail: {
+                    tilte1: '短视频解决方案',
+                    tilte2: '视频直播解决方案',
+                    tilte3: '视频点播解决方案',
+                    tilte4: '新媒体解决方案',
+                    tilte5: '私有云行业解决方案'
+                }
+            },
+            {
+                aTitle: '活动与合作',
+                detail: {
+                    tilte1: '合伙人计划',
+                    tilte2: '技术大会',
+                    tilte3: '开源项目扶持计划',
+                    tilte4: '企业扶持方案'
+                }
+            },
+            {
+                aTitle: '新闻动态'
+            },
+            {
+                aTitle: '关于我们',
+                detail: {
+                    tilte1: '公司介绍',
+                    tilte2: '社会招聘',
+                    tilte3: '校园招聘',
+                    tilte4: '联系我们',
+                }
+            }]
+        content.forEach(e => {
 
+            let aTitle = document.createElement('a')
+            let liADetail = document.createElement('a')
+            let liDetail = document.createElement('li')
+            let innerUl = document.createElement('ul')
+            let outLi = document.createElement('li')
+            aTitle.innerHTML = e.aTitle
+            outLi.appendChild(aTitle)
+
+            if (!e.detail) {
+                console.log('noDetail');
+            } else {
+                for (let i in e.detail) {
+                    innerUl.innerHTML = `
+                    <li><a href="">${e.detail.tilte1}</a></li>
+                    <li><a href="">${e.detail.tilte2}</a></li>
+                    <li><a href="">${e.detail.tilte3}</a></li>
+                    <li><a href="">${e.detail.tilte4 ? e.detail.tilte4 : ''}</a></li>
+                    <li><a href="">${e.detail.tilte5 ? e.detail.tilte4 : ''}</a></li>
+                `
+                }
+            }
+            innerUl.appendChild(liDetail)
+            outLi.appendChild(innerUl)
+            menu.appendChild(outLi)
+        });
+    </script>
 </body>
 
 </html>
