@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" class="h-64">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>git弹框</title>
+    <link rel="stylesheet" href="../style/tailwind.css">
+</head>
+
+<body class="bg-gray-200 bg-cover bg-no-peat text-sm " style="background-image: url(../images/github.jpg);">
+    <div class="flex justify-center" id="origin">
+        <div class="bg-gray-900 fixed inset-0 opacity-25"></div>
+
+        <div class=" overflow-hidden border border-gray-600 bg-white max-w-md w-full mt-20 z-10 rounded shadow-lg">
+            <div class="flex justify-between p-4 items-center">
+                <div class="font-medium">Are you adbolutely sure?</div>
+            <div>
+                <svg id="close" t="1599981200608" class="octicon octicon-x hover:cursor-pointer " viewBox="0 0 1024 1024" 
+                p-id="1155" width="12" height="16">
+                <path
+                    d="M566.97558594 521.09667969L856.8828125 231.18945312c14.63378906-14.63378906 14.63378906-38.75976563 0-53.39355468l-1.58203125-1.58203125c-14.63378906-14.63378906-38.75976563-14.63378906-53.39355469 0L512 466.51660156 222.09277344 176.21386719c-14.63378906-14.63378906-38.75976563-14.63378906-53.39355469 0l-1.58203125 1.58203125c-15.02929688 14.63378906-15.02929688 38.75976563 0 53.39355469l289.90722656 289.90722656L167.1171875 811.00390625c-14.63378906 14.63378906-14.63378906 38.75976563 0 53.39355469l1.58203125 1.58203125c14.63378906 14.63378906 38.75976563 14.63378906 53.39355469 0L512 576.07226563 801.90722656 865.97949219c14.63378906 14.63378906 38.75976563 14.63378906 53.39355469 0l1.58203125-1.58203125c14.63378906-14.63378906 14.63378906-38.75976563 0-53.39355469L566.97558594 521.09667969z"
+                    fill="#363F4D" p-id="1156"></path>
+            </svg>
+            </div>
+            </div>
+
+            <div>
+                <div class="bg-yellow-200 text-yellow-700 border-t border-b p-4">Unexpected bad things will happen if
+                    you don't read this!</div>
+                <div class="p-4 border-b border-red-300  ">
+                    <p>
+                        This action cannot be undone. This will permanently delete the DaiWang-Lei/tailWindCss
+                        repository, wiki, issues, comments, packages, secrets, workflow runs, and remove all
+                        collaborator associations.
+                    </p>
+                    <p class="mt-2">
+                        Please type DaiWang-Lei/tailWindCss to confirm.
+                    </p>
+                    <input type="text"
+                        class="border shadow-inner w-full my-2 px-2 py-1 focus:outline-none focus:shadow-outline focus:border-blue-500">
+                    <button disabled class="rounded-sm py-1 px-2 w-full bg-gray-100 text-red-300 font-medium">I understand the consequences, delete this repository</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        const close = document.getElementById('close')
+        const origin = document.getElementById('origin')
+        close.onclick=()=>{
+            origin.className = 'hidden'
+        }
+    </script>
+</body>
+
+</html>
