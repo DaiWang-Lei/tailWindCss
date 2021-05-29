@@ -1,0 +1,8 @@
+{
+  "name": "tailWindCss",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/DaiWang-Lei/tailWindCss.git",
+  "author": "罗卜大 <7628035+wx_8387aaaa57@user.noreply.gitee.com>",
+  "license": "MIT"
+}
